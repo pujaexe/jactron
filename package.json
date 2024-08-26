@@ -11,6 +11,7 @@
   "dependencies": {
     "@plasmicapp/cli": "^0.1.331",
     "@plasmicapp/loader-nextjs": "^1.0.404",
+    "@plasmicapp/loader-react": "^1.0.367",
     "@plasmicapp/react-web": "^0.2.350",
     "next": "14.2.6",
     "react": "^18",
