@@ -59,10 +59,15 @@ import {
   useGlobalActions
 } from "@plasmicapp/react-web/lib/host";
 
+import Button from "../../Button"; // plasmic-import: KlhgK-3_Tudg/component
+
 import "@plasmicapp/react-web/lib/plasmic.css";
 
 import projectcss from "./plasmic.module.css"; // plasmic-import: iQLrfYQ86tKsFeD4X4u2uv/projectcss
 import sty from "./PlasmicHomepage.module.css"; // plasmic-import: UGK03Yl4BFqN/css
+
+import ChecksvgIcon from "./icons/PlasmicIcon__Checksvg"; // plasmic-import: fK-IZMvYA2Ot/icon
+import IconIcon from "./icons/PlasmicIcon__Icon"; // plasmic-import: 9JPDCGYib5ME/icon
 
 createPlasmicElementProxy;
 
@@ -79,7 +84,7 @@ export type PlasmicHomepage__OverridesType = {
   root?: Flex__<"div">;
   section?: Flex__<"section">;
   h1?: Flex__<"h1">;
-  text?: Flex__<"div">;
+  button?: Flex__<typeof Button>;
 };
 
 export interface DefaultHomepageProps {}
@@ -156,12 +161,10 @@ function PlasmicHomepage__RenderFunc(props: {
               {"Jacktron"}
             </h1>
             <div
-              data-plasmic-name={"text"}
-              data-plasmic-override={overrides.text}
               className={classNames(
                 projectcss.all,
                 projectcss.__wab_text,
-                sty.text
+                sty.text__jsZlv
               )}
             >
               <React.Fragment>
@@ -184,6 +187,21 @@ function PlasmicHomepage__RenderFunc(props: {
               </React.Fragment>
             </div>
           </section>
+          <Button
+            data-plasmic-name={"button"}
+            data-plasmic-override={overrides.button}
+            className={classNames("__wab_instance", sty.button)}
+          >
+            <div
+              className={classNames(
+                projectcss.all,
+                projectcss.__wab_text,
+                sty.text__mn8Q
+              )}
+            >
+              {"Connect Wallet"}
+            </div>
+          </Button>
         </div>
       </div>
     </React.Fragment>
@@ -191,10 +209,10 @@ function PlasmicHomepage__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "section", "h1", "text"],
-  section: ["section", "h1", "text"],
+  root: ["root", "section", "h1", "button"],
+  section: ["section", "h1"],
   h1: ["h1"],
-  text: ["text"]
+  button: ["button"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -203,7 +221,7 @@ type NodeDefaultElementType = {
   root: "div";
   section: "section";
   h1: "h1";
-  text: "div";
+  button: typeof Button;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -268,7 +286,7 @@ export const PlasmicHomepage = Object.assign(
     // Helper components rendering sub-elements
     section: makeNodeComponent("section"),
     h1: makeNodeComponent("h1"),
-    text: makeNodeComponent("text"),
+    button: makeNodeComponent("button"),
 
     // Metadata about props expected for PlasmicHomepage
     internalVariantProps: PlasmicHomepage__VariantProps,

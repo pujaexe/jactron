@@ -59,9 +59,27 @@
   margin-bottom: 32px;
   min-width: 0;
 }
-.text {
+.text__jsZlv {
   position: relative;
   width: 100%;
   height: auto;
   min-width: 0;
+}
+.button:global(.__wab_instance) {
+  max-width: 100%;
+}
+.svg__z89Uf {
+  position: relative;
+  object-fit: cover;
+  width: auto;
+  height: 1em;
+}
+.text__mn8Q {
+  height: auto;
+}
+.svg__e4GIw {
+  position: relative;
+  object-fit: cover;
+  width: auto;
+  height: 1em;
 }

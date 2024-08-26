@@ -41,9 +41,34 @@
           "scheme": "blackbox",
           "componentType": "page",
           "path": "/"
+        },
+        {
+          "id": "KlhgK-3_Tudg",
+          "name": "Button",
+          "type": "managed",
+          "projectId": "iQLrfYQ86tKsFeD4X4u2uv",
+          "renderModuleFilePath": "plasmic/jacktron/PlasmicButton.tsx",
+          "importSpec": {
+            "modulePath": "Button.tsx"
+          },
+          "cssFilePath": "plasmic/jacktron/PlasmicButton.module.css",
+          "scheme": "blackbox",
+          "componentType": "component",
+          "plumeType": "button"
         }
       ],
-      "icons": [],
+      "icons": [
+        {
+          "id": "fK-IZMvYA2Ot",
+          "name": "ChecksvgIcon",
+          "moduleFilePath": "plasmic/jacktron/icons/PlasmicIcon__Checksvg.tsx"
+        },
+        {
+          "id": "9JPDCGYib5ME",
+          "name": "IconIcon",
+          "moduleFilePath": "plasmic/jacktron/icons/PlasmicIcon__Icon.tsx"
+        }
+      ],
       "images": [],
       "indirect": false,
       "globalContextsFilePath": "",
