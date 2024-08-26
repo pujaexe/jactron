@@ -1,0 +1,84 @@
+{
+  "platform": "nextjs",
+  "code": {
+    "lang": "ts",
+    "scheme": "blackbox",
+    "reactRuntime": "classic"
+  },
+  "style": {
+    "scheme": "css-modules",
+    "defaultStyleCssFilePath": "plasmic/plasmic__default_style.css"
+  },
+  "images": {
+    "scheme": "public-files",
+    "publicDir": "../public",
+    "publicUrlPrefix": "/"
+  },
+  "tokens": {
+    "scheme": "theo",
+    "tokensFilePath": "plasmic-tokens.theo.json"
+  },
+  "srcDir": "components",
+  "defaultPlasmicDir": "./plasmic",
+  "projects": [
+    {
+      "projectId": "iQLrfYQ86tKsFeD4X4u2uv",
+      "projectApiToken": "KxM1xinqKlRJ2bheuhMgKVrTaH11bREq6q8JmMBQgiUh5R6Q1Z0WTin0yqpFci9YooMa0Ss66LBo3xug3QWg",
+      "projectName": "jacktron",
+      "version": "latest",
+      "cssFilePath": "plasmic/jacktron/plasmic.module.css",
+      "components": [
+        {
+          "id": "UGK03Yl4BFqN",
+          "name": "Homepage",
+          "type": "managed",
+          "projectId": "iQLrfYQ86tKsFeD4X4u2uv",
+          "renderModuleFilePath": "plasmic/jacktron/PlasmicHomepage.tsx",
+          "importSpec": {
+            "modulePath": "../pages/index.tsx"
+          },
+          "cssFilePath": "plasmic/jacktron/PlasmicHomepage.module.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/"
+        }
+      ],
+      "icons": [],
+      "images": [],
+      "indirect": false,
+      "globalContextsFilePath": "",
+      "splitsProviderFilePath": "",
+      "codeComponents": [
+        {
+          "id": "bqf15vvnVJTo",
+          "name": "PlasmicHead",
+          "displayName": "hostless-plasmic-head",
+          "componentImportPath": "@plasmicapp/react-web"
+        },
+        {
+          "id": "BoabxLNFHOnZ",
+          "name": "Fetcher",
+          "displayName": "plasmic-data-source-fetcher",
+          "componentImportPath": "@plasmicapp/react-web/lib/data-sources"
+        }
+      ],
+      "customFunctions": []
+    }
+  ],
+  "globalVariants": {
+    "variantGroups": [
+      {
+        "id": "JXR3hkrXXNxq",
+        "name": "Screen",
+        "projectId": "iQLrfYQ86tKsFeD4X4u2uv",
+        "contextFilePath": "plasmic/jacktron/PlasmicGlobalVariant__Screen.tsx"
+      }
+    ]
+  },
+  "wrapPagesWithGlobalContexts": true,
+  "nextjsConfig": {
+    "pagesDir": "../pages"
+  },
+  "cliVersion": "0.1.331",
+  "$schema": "https://unpkg.com/@plasmicapp/cli@0.1.331/dist/plasmic.schema.json"
+}
