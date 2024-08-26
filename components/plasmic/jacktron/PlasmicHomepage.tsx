@@ -16,7 +16,6 @@ import * as React from "react";
 import Head from "next/head";
 import Link, { LinkProps } from "next/link";
 import { useRouter } from "next/router";
-import { connectWallet } from "./connectWallet";
 
 import {
   Flex as Flex__,
@@ -199,7 +198,7 @@ function PlasmicHomepage__RenderFunc(props: {
                 ? (() => {
                     const actionArgs = {
                       customFunction: async () => {
-                        return { connectWallet };
+                        return connectWallet();
                       }
                     };
                     return (({ customFunction }) => {
