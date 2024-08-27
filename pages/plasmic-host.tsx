@@ -15,12 +15,8 @@ import ConnectWalletButton from '../components/plasmic/jacktron/ConnectWalletBut
 
 registerComponent(ConnectWalletButton, {
   name: "ConnectWalletButton",
-  props: {
-    // Tidak ada props khusus untuk komponen ini karena logikanya internal
-  },
-  
-  // Tentukan bagaimana kode Plasmic yang dihasilkan harus mengimpor komponen ini
-  importPath: './components/ConnectWalletButton',
+  props: {},
+  importPath: './components/plasmic/jacktron/ConnectWalletButton',
 });
 
 export default function PlasmicHost() {

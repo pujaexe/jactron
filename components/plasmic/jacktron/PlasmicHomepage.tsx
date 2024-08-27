@@ -59,7 +59,8 @@ import {
   useGlobalActions
 } from "@plasmicapp/react-web/lib/host";
 
-import { ConnectWalletButton } from "../../ConnectWalletButton"; // plasmic-import: 0GXY2qLnnqye/codeComponent
+import ConnectWalletButton from "./ConnectWalletButton";
+
 import Button from "../../Button"; // plasmic-import: KlhgK-3_Tudg/component
 
 import "@plasmicapp/react-web/lib/plasmic.css";
