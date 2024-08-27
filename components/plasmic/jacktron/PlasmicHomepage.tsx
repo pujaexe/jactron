@@ -59,8 +59,7 @@ import {
   useGlobalActions
 } from "@plasmicapp/react-web/lib/host";
 
-import { ConnectWalletButton } from "../../ConnectWalletButton"; // plasmic-import: 0GXY2qLnnqye/codeComponent
-import Button from "../../Button"; // plasmic-import: KlhgK-3_Tudg/component
+import { ConnectWalletButton } from "./ConnectWalletButton"; // plasmic-import: 0GXY2qLnnqye/codeComponent
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
@@ -83,6 +82,7 @@ export type PlasmicHomepage__OverridesType = {
   section?: Flex__<"section">;
   h1?: Flex__<"h1">;
   text?: Flex__<"div">;
+  connectWalletButton?: Flex__<typeof ConnectWalletButton>;
 };
 
 export interface DefaultHomepageProps {}
@@ -187,6 +187,11 @@ function PlasmicHomepage__RenderFunc(props: {
               </React.Fragment>
             </div>
           </section>
+          <ConnectWalletButton
+            data-plasmic-name={"connectWalletButton"}
+            data-plasmic-override={overrides.connectWalletButton}
+            className={classNames("__wab_instance", sty.connectWalletButton)}
+          />
         </div>
       </div>
     </React.Fragment>
@@ -194,10 +199,11 @@ function PlasmicHomepage__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "section", "h1", "text"],
+  root: ["root", "section", "h1", "text", "connectWalletButton"],
   section: ["section", "h1", "text"],
   h1: ["h1"],
-  text: ["text"]
+  text: ["text"],
+  connectWalletButton: ["connectWalletButton"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -207,6 +213,7 @@ type NodeDefaultElementType = {
   section: "section";
   h1: "h1";
   text: "div";
+  connectWalletButton: typeof ConnectWalletButton;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -272,6 +279,7 @@ export const PlasmicHomepage = Object.assign(
     section: makeNodeComponent("section"),
     h1: makeNodeComponent("h1"),
     text: makeNodeComponent("text"),
+    connectWalletButton: makeNodeComponent("connectWalletButton"),
 
     // Metadata about props expected for PlasmicHomepage
     internalVariantProps: PlasmicHomepage__VariantProps,
