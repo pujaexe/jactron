@@ -90,7 +90,7 @@
           "id": "0GXY2qLnnqye",
           "name": "ConnectWalletButton",
           "displayName": "ConnectWalletButton",
-          "componentImportPath": "./components/ConnectWalletButton"
+          "componentImportPath": "./components/plasmic/jacktron/ConnectWalletButton"
         }
       ],
       "customFunctions": []

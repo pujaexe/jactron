@@ -59,17 +59,13 @@ import {
   useGlobalActions
 } from "@plasmicapp/react-web/lib/host";
 
-import ConnectWalletButton from "./ConnectWalletButton";
-
+import { ConnectWalletButton } from "../../ConnectWalletButton"; // plasmic-import: 0GXY2qLnnqye/codeComponent
 import Button from "../../Button"; // plasmic-import: KlhgK-3_Tudg/component
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
 import projectcss from "./plasmic.module.css"; // plasmic-import: iQLrfYQ86tKsFeD4X4u2uv/projectcss
 import sty from "./PlasmicHomepage.module.css"; // plasmic-import: UGK03Yl4BFqN/css
-
-import ChecksvgIcon from "./icons/PlasmicIcon__Checksvg"; // plasmic-import: fK-IZMvYA2Ot/icon
-import IconIcon from "./icons/PlasmicIcon__Icon"; // plasmic-import: 9JPDCGYib5ME/icon
 
 createPlasmicElementProxy;
 
@@ -86,8 +82,7 @@ export type PlasmicHomepage__OverridesType = {
   root?: Flex__<"div">;
   section?: Flex__<"section">;
   h1?: Flex__<"h1">;
-  connectWalletButton?: Flex__<typeof ConnectWalletButton>;
-  button?: Flex__<typeof Button>;
+  text?: Flex__<"div">;
 };
 
 export interface DefaultHomepageProps {}
@@ -164,10 +159,12 @@ function PlasmicHomepage__RenderFunc(props: {
               {"Jacktron"}
             </h1>
             <div
+              data-plasmic-name={"text"}
+              data-plasmic-override={overrides.text}
               className={classNames(
                 projectcss.all,
                 projectcss.__wab_text,
-                sty.text__jsZlv
+                sty.text
               )}
             >
               <React.Fragment>
@@ -189,50 +186,7 @@ function PlasmicHomepage__RenderFunc(props: {
                 </React.Fragment>
               </React.Fragment>
             </div>
-            <ConnectWalletButton
-              data-plasmic-name={"connectWalletButton"}
-              data-plasmic-override={overrides.connectWalletButton}
-              className={classNames("__wab_instance", sty.connectWalletButton)}
-            />
           </section>
-          <Button
-            data-plasmic-name={"button"}
-            data-plasmic-override={overrides.button}
-            className={classNames("__wab_instance", sty.button)}
-            onClick={async event => {
-              const $steps = {};
-
-              $steps["runCode"] = true
-                ? (() => {
-                    const actionArgs = {
-                      customFunction: async () => {
-                        return connectWallet();
-                      }
-                    };
-                    return (({ customFunction }) => {
-                      return customFunction();
-                    })?.apply(null, [actionArgs]);
-                  })()
-                : undefined;
-              if (
-                $steps["runCode"] != null &&
-                typeof $steps["runCode"] === "object" &&
-                typeof $steps["runCode"].then === "function"
-              ) {
-                $steps["runCode"] = await $steps["runCode"];
-              }
-            }}
-          >
-            <div
-              className={classNames(
-                projectcss.all,
-                projectcss.__wab_text,
-                sty.text__mn8Q
-              )}
-            >
-              {"Connect Wallet"}
-            </div>
-          </Button>
         </div>
       </div>
     </React.Fragment>
@@ -240,11 +194,10 @@ function PlasmicHomepage__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "section", "h1", "connectWalletButton", "button"],
-  section: ["section", "h1", "connectWalletButton"],
+  root: ["root", "section", "h1", "text"],
+  section: ["section", "h1", "text"],
   h1: ["h1"],
-  connectWalletButton: ["connectWalletButton"],
-  button: ["button"]
+  text: ["text"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -253,8 +206,7 @@ type NodeDefaultElementType = {
   root: "div";
   section: "section";
   h1: "h1";
-  connectWalletButton: typeof ConnectWalletButton;
-  button: typeof Button;
+  text: "div";
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -319,8 +271,7 @@ export const PlasmicHomepage = Object.assign(
     // Helper components rendering sub-elements
     section: makeNodeComponent("section"),
     h1: makeNodeComponent("h1"),
-    connectWalletButton: makeNodeComponent("connectWalletButton"),
-    button: makeNodeComponent("button"),
+    text: makeNodeComponent("text"),
 
     // Metadata about props expected for PlasmicHomepage
     internalVariantProps: PlasmicHomepage__VariantProps,
