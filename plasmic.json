@@ -85,6 +85,12 @@
           "name": "Fetcher",
           "displayName": "plasmic-data-source-fetcher",
           "componentImportPath": "@plasmicapp/react-web/lib/data-sources"
+        },
+        {
+          "id": "0GXY2qLnnqye",
+          "name": "ConnectWalletButton",
+          "displayName": "ConnectWalletButton",
+          "componentImportPath": "./components/ConnectWalletButton"
         }
       ],
       "customFunctions": []

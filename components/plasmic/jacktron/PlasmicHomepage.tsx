@@ -16,7 +16,7 @@ import * as React from "react";
 import Head from "next/head";
 import Link, { LinkProps } from "next/link";
 import { useRouter } from "next/router";
-import { connectWallet } from "./connectWallet";
+
 import {
   Flex as Flex__,
   MultiChoiceArg,
@@ -59,6 +59,7 @@ import {
   useGlobalActions
 } from "@plasmicapp/react-web/lib/host";
 
+import { ConnectWalletButton } from "../../ConnectWalletButton"; // plasmic-import: 0GXY2qLnnqye/codeComponent
 import Button from "../../Button"; // plasmic-import: KlhgK-3_Tudg/component
 
 import "@plasmicapp/react-web/lib/plasmic.css";
@@ -84,6 +85,7 @@ export type PlasmicHomepage__OverridesType = {
   root?: Flex__<"div">;
   section?: Flex__<"section">;
   h1?: Flex__<"h1">;
+  connectWalletButton?: Flex__<typeof ConnectWalletButton>;
   button?: Flex__<typeof Button>;
 };
 
@@ -186,6 +188,11 @@ function PlasmicHomepage__RenderFunc(props: {
                 </React.Fragment>
               </React.Fragment>
             </div>
+            <ConnectWalletButton
+              data-plasmic-name={"connectWalletButton"}
+              data-plasmic-override={overrides.connectWalletButton}
+              className={classNames("__wab_instance", sty.connectWalletButton)}
+            />
           </section>
           <Button
             data-plasmic-name={"button"}
@@ -232,9 +239,10 @@ function PlasmicHomepage__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "section", "h1", "button"],
-  section: ["section", "h1"],
+  root: ["root", "section", "h1", "connectWalletButton", "button"],
+  section: ["section", "h1", "connectWalletButton"],
   h1: ["h1"],
+  connectWalletButton: ["connectWalletButton"],
   button: ["button"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
@@ -244,6 +252,7 @@ type NodeDefaultElementType = {
   root: "div";
   section: "section";
   h1: "h1";
+  connectWalletButton: typeof ConnectWalletButton;
   button: typeof Button;
 };
 
@@ -309,6 +318,7 @@ export const PlasmicHomepage = Object.assign(
     // Helper components rendering sub-elements
     section: makeNodeComponent("section"),
     h1: makeNodeComponent("h1"),
+    connectWalletButton: makeNodeComponent("connectWalletButton"),
     button: makeNodeComponent("button"),
 
     // Metadata about props expected for PlasmicHomepage
